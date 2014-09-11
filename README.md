@@ -1,4 +1,6 @@
-cool-sharp-styleguide
-=====================
+Otra guía de estilo *cool* para C#
+=
 
-Yet another C# style guide
+*sharp-guide* está escrita con ayuda de StackEdit y el hermoso Markdown Extra.
+
+> Written with [StackEdit](https://stackedit.io/).
