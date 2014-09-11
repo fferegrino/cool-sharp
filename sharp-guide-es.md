@@ -13,4 +13,29 @@ Respecto al buen código, todos pueden tener una opinión distinta sin embargo h
 Escribir El Buen Código es un arte que tu debes aprender, practicar y fomentar. Adoptar un estilo (o crear uno propio) te puede ayudar a conseguirlo.
 
 ### Sobre las guías de estilo
-A diferencia de lo que podría parecer, esta guía (y todas las demás que te puedes encontrar) no son mandamientos que debes seguir estrictamente, porque tal vez haya aspectos que no se puedan integrar a tu organización por cuestiones filosóficas de la empresa, compatibilidad con sistemas antiguos o complicados errores en la Matrix. Así que toma estas guías como sugerencias que si son adoptadas por tu organización te ayudarán a mantener un código estandarizado, que sea fácilmente legible por todos miembros del equipo de desarrollo y, en caso de ser requerido, sea mantenible.
+A diferencia de lo que podría parecer, esta guía (y todas las demás que te encuentres) no son mandamientos que debes seguir estrictamente, porque tal vez haya aspectos que no se puedan integrar a tu organización por cuestiones filosóficas de la empresa, compatibilidad con sistemas antiguos o complicados errores en la Matrix. Así que toma estas guías como sugerencias que si son adoptadas por tu organización te ayudarán a mantener un código estandarizado, que sea fácilmente legible por todos miembros del equipo de desarrollo y, en caso de ser requerido, sea mantenible.
+## La guía
+### Convención sobre nombres
+
+ - Usa nombres comprensibles que se autodocumenten para clases, métodos, variables, etc.
+ - Usa nombres completos siempre que sea posible, es deir, evite abreviaturas. Si se está trabajando con siglas o acrónimos mantenga todos sus caractéres en mayúsculas
+ ```string addr; // incorrecto
+string address; // correcto
+void PublishHTML() // correcto
+void PublishHypertexTrans... // incorrecto```
+
+ - Usa nombres de variables de una sola letra solo en casod e bucles, siempre y cuando no se usa más que para contador de iteraciones
+`for(int i = 0; i < value; i++) {`
+
+ - Usa *Pascal Casing* para nombrar clases y métodos
+ `class SharpGuide { ...`
+ `void FixMatrix(int matrixId) { ...`
+
+ - Usa *Camel Casing* para los nombres de variables y parámetros de método
+ `string awesomeProgrammingLanguage = "C#";`
+ `void SetLanguage(string someLanguage) { ...`
+
+ - Para las interfaces antepon una `I` al nombre que debe estar escrito usando *Camel Casing*
+ `interface IStyleGuide { ...`
+ 
+  
