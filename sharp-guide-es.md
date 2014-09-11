@@ -18,24 +18,31 @@ A diferencia de lo que podría parecer, esta guía (y todas las demás que te en
 ### Convención sobre nombres
 
  - Usa nombres comprensibles que se autodocumenten para clases, métodos, variables, etc.
- - Usa nombres completos siempre que sea posible, es deir, evite abreviaturas. Si se está trabajando con siglas o acrónimos mantenga todos sus caractéres en mayúsculas
- ```string addr; // incorrecto
-string address; // correcto
-void PublishHTML() // correcto
-void PublishHypertexTrans... // incorrecto```
+ - En caso de variables de método, a menos que se requiera otra lógica, procura siempre usar las propiedades autoimplementadas `int Property { get; set; }`  
+ 
+ - En caso de ser necesarias, utiliza un `_` antepuesto al nombre de una variable miembro, escrita con *Camel Casing*
+`private int _clientId`
+`private string _name;`  
+
+ - Usa nombres completos siempre que sea posible, es deir, evita abreviaturas. Si se está trabajando con siglas o acrónimos debes mantener todos sus caractéres en mayúsculas  
+`string addr; // incorrecto`
+`string address; // correcto`
+`void PublishHTML() // correcto`
+`void PublishHypertexTrans... // incorrecto`  
 
  - Usa nombres de variables de una sola letra solo en casod e bucles, siempre y cuando no se usa más que para contador de iteraciones
-`for(int i = 0; i < value; i++) {`
+`for(int i = 0; i < value; i++) {`  
 
  - Usa *Pascal Casing* para nombrar clases y métodos
  `class SharpGuide { ...`
- `void FixMatrix(int matrixId) { ...`
+ `void FixMatrix(int matrixId) { ...`  
 
  - Usa *Camel Casing* para los nombres de variables y parámetros de método
  `string awesomeProgrammingLanguage = "C#";`
- `void SetLanguage(string someLanguage) { ...`
+ `void SetLanguage(string someLanguage) { ...`  
 
- - Para las interfaces antepon una `I` al nombre que debe estar escrito usando *Camel Casing*
- `interface IStyleGuide { ...`
+ - Para las interfaces antepón una `I` al nombre que debe estar escrito usando *Camel Casing*
+ `interface IStyleGuide { ...`  
  
   
+
