@@ -65,4 +65,28 @@ Hay algunas organizaciones que requieren que comentes tu código o puede que aú
  - Tus comentarios son hermosos sin necesidad de que les hagas una cajita de `********` al rededor, así que también evita eso
 
  - Revisa la ortografía de tus comentarios y asegurate de que sean claros al momento de leerlos
- - Comentarios en XML, C# ofrece la posibilidad de escribir comentarios 
+ - Recuerda que C# permite crear documentación en XML, para lo cual es necesario que esté bien formado.
+
+### Estructura de un archivo
+También hay recomendaciones con respecto a los archivos, su estructura y su contenido.
+
+ - Procura que un archivo contenga una sola clase, habrá casos en los que tal vez no se pueda, pero en general es posible
+
+ - Usa `tab` con tamaño de 4 para indentar el código en lugar de espacios
+
+ - // TODO: Decidir acerca de los corchetes de apertura en la misma línea que una sentencia de código o firma de método
+
+ - Agrupa líneas de código de acuerdo a la labor que realizan, separa dichos grupos por una línea en blanco
+
+ - Separa por una sola línea los métodos definidos en una clase
+
+ - La estructura general de un archivo es:
+	 - Sentencias *using*
+	 - *namespace*
+	 - Declaración de la clase
+	 -  Variables privadas
+	 - Propiedades privadas
+	 - Métodos privados
+	 - Constructores
+	 - Propiedades públicas
+	 - Métodos publicos
