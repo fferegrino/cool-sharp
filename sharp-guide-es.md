@@ -19,6 +19,7 @@ A diferencia de lo que podría parecer, esta guía (y todas las demás que te en
 Increíblemente, escoger buenos nombres para tus variables de programa, métodos y clases puede ser la diferencia entre querer revisar un código viejo o rehacer todo de nuevo. Tal vez no quieras buscar para qué usas esa variable `c` dentro del método `compraalgo` y prefieras reescribir todo. No sé, piénsalo.
 
  - Usa nombres comprensibles que se autodocumenten para clases, métodos, variables, etc.
+
  - En caso de variables de método, a menos que se requiera otra lógica, procura siempre usar las propiedades autoimplementadas  
  `int Property { get; set; }`  
  
@@ -67,10 +68,12 @@ Hay algunas organizaciones que requieren que comentes tu código o puede que aú
  - Revisa la ortografía de tus comentarios y asegurate de que sean claros al momento de leerlos
  - Recuerda que C# permite crear documentación en XML, para lo cual es necesario que esté bien formado.
 
-### Estructura de un archivo
+### Estructura de un archivo y una clase
 También hay recomendaciones con respecto a los archivos, su estructura y su contenido.
 
  - Procura que un archivo contenga una sola clase, habrá casos en los que tal vez no se pueda, pero en general es posible
+
+ - El archivo de una clase debe llamarse igual que la clase que contiene
 
  - Usa `tab` con tamaño de 4 para indentar el código en lugar de espacios
 
@@ -89,4 +92,15 @@ También hay recomendaciones con respecto a los archivos, su estructura y su con
 	 - Métodos privados
 	 - Constructores
 	 - Propiedades públicas
-	 - Métodos publicos
+	 - Métodos publicos  
+
+ - La usa las directivas `#region` y `#endregion` para agrupar todas las categorías  enteriores y sea fácil navegar entre ellas
+
+### Algunas buenas prácticas
+
+ - Evita los métodos muy largos, procura conservar de 1 ~ 30 líneas de código. Si se pasa tal vez sea necesario revisarlo para ver si se puede separar en dos o varios métodos.
+ - Nuevamente, **autodocumenta** tus métodos, si el nombre es claro no hay necesidad de explicar demasiado mediante los comentarios.
+ - No mezcles varias tareas en un solo método. Un solo método debe hacer una sola acción.
+ - Prefiere el uso de los alias de tipos de dato conocidos para declarar variables. Es decir, prefiere `string awesome = "awesome!";` a `String awesome = "awesome!"`.
+ - Por el contrario, utiliza los tipos definidos en el `namespace System` para hacer referencia a constantes o métodos de clase: `int t = Int32.ParseInt("0");` mucho mejor que `int t = int.ParseInt("0");`.
+ - 
