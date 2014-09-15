@@ -1,9 +1,11 @@
 Guía de estilo para C#
-======
+==================
+
 ## ¿Por qué?
 Seguramente te estarás preguntando para qué necesitas una guía de estilo si tu ya sabes programar. Cierto, pero déjame decirte algo esperando no sonar ofensivo: **Cualquiera puede programar**. Cualquiera con unos cuantos meses de experiencia, alguno que otro curso o vídeo en internet puede escribir una aplicación funcional en poco tiempo. Hacer código que funcione es sencillo, hacer un buen código que funcione es lo complicado.
+
 ### El Buen Código
-Respecto al buen código, todos pueden tener una opinión distinta sin embargo hay temas my mencionados en cualquier definición de El Bbuen Código, basándonos en eso podemos decir que es:
+Respecto al buen código, todos pueden tener una opinión distinta sin hay puntos en los que coincide cualquier definición de El Buen Código, basándonos en eso podemos decir que es:
 
  - Eficiente
  - Mantenible
@@ -14,6 +16,7 @@ Escribir El Buen Código es un arte que tu debes aprender, practicar y fomentar.
 
 ### Sobre las guías de estilo
 A diferencia de lo que podría parecer, esta guía (y todas las demás que te encuentres) no son mandamientos que debes seguir estrictamente, porque tal vez haya aspectos que no se puedan integrar a tu organización por cuestiones filosóficas de la empresa, compatibilidad con sistemas antiguos o complicados errores en la Matrix. Así que toma estas guías como sugerencias que si son adoptadas por tu organización te ayudarán a mantener un código estandarizado, que sea fácilmente legible por todos miembros del equipo de desarrollo y, en caso de ser requerido, sea mantenible.
+
 ## La guía
 ### Te voy a cambiar el nombre...
 Increíblemente, escoger buenos nombres para tus variables de programa, métodos y clases puede ser la diferencia entre querer revisar un código viejo o rehacer todo de nuevo. Tal vez no quieras buscar para qué usas esa variable `c` dentro del método `compraalgo` y prefieras reescribir todo. No sé, piénsalo.
@@ -63,9 +66,11 @@ Hay algunas organizaciones que requieren que comentes tu código o puede que aú
  - Escribe los comentarios en líneas que no contengan código y siempre antes de la sección a la que te quieres referir. Una excepción son las declaraciones o inicializaciones de variables.
  - Usa `//` o `///` para escribir comentarios. Evita `/* ... */` (y evita escribir comentarios de más de una línea)  
  
- - Tus comentarios son hermosos sin necesidad de que les hagas una cajita de `********` al rededor, así que también evita eso
+ - Tus comentarios son hermosos sin necesidad de que les hagas una cajita de `********` al rededor, así que también evita hacerlo
 
- - Revisa la ortografía de tus comentarios y asegurate de que sean claros al momento de leerlos
+ - Revisa la ortografía de tus comentarios y asegurate de que sean claros al momento de leerlos.
+ - Hay un comentario muy especial que debes usar cada vez que dejes código sin finalizar, ese es el comentario `// TODO: [descripción]` ya que el entorno de desarrollo identificará ese comentario como una funcionalidad pendiente de acabar y esta aparecerá en la lista de tareas pendientes
+
  - Recuerda que C# permite crear documentación en XML, para lo cual es necesario que esté bien formado.
 
 ### Estructura de un archivo y una clase
@@ -99,8 +104,25 @@ También hay recomendaciones con respecto a los archivos, su estructura y su con
 ### Algunas buenas prácticas
 
  - Evita los métodos muy largos, procura conservar de 1 ~ 30 líneas de código. Si se pasa tal vez sea necesario revisarlo para ver si se puede separar en dos o varios métodos.
+
  - Nuevamente, **autodocumenta** tus métodos, si el nombre es claro no hay necesidad de explicar demasiado mediante los comentarios.
+
  - No mezcles varias tareas en un solo método. Un solo método debe hacer una sola acción.
+
  - Prefiere el uso de los alias de tipos de dato conocidos para declarar variables. Es decir, prefiere `string awesome = "awesome!";` a `String awesome = "awesome!"`.
+
  - Por el contrario, utiliza los tipos definidos en el `namespace System` para hacer referencia a constantes o métodos de clase: `int t = Int32.ParseInt("0");` mucho mejor que `int t = int.ParseInt("0");`.
- - 
+
+ - No todo dentro de una clase tiene que ser público o privado, usa el modificador de acceso `internal` para propiedades y métodos si solo se accede a ellos dentro del mismo ensamblado.
+
+ - Si un método recibe más de 5 o 6 parámetros considera reemplazarlos por una estructura o una clase.
+
+ - **NUNCA, nunca** *hardcodees*[^1] números, cadenas o cualquier otro valor. Usa fuentes extrarnas de datos (archivos, baess de datos, línea de comandos...).
+
+ - Utiliza `String.Empty` en lugar de las comillas vacías `""`.
+
+ - Cuando sea necesario comprobar si una cadena está vacía utiliza los métodos del framework: `String.IsNullOrEmpty` o `String.IsNullOrWhiteSpace`.
+
+ - Procura sobreescribir el método `Equals` en las clases definidas por el usuario.
+
+[^1]: Mala práctica del en el desarrollo de software que consiste en incrustar datos directamente en el código fuente de un programa
