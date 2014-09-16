@@ -23,36 +23,37 @@ Increíblemente, escoger buenos nombres para tus variables de programa, métodos
 
  - Usa nombres comprensibles que se autodocumenten para clases, métodos, variables, etc.
 
- - En caso de variables de método, a menos que se requiera otra lógica, procura siempre usar las propiedades autoimplementadas  
+ - En caso de variables de método, a menos que se requiera otra lógica, procura siempre usar las propiedades autoimplementadas.  
  `int Property { get; set; }`  
  
- - En caso de ser necesarias, utiliza un `_` antepuesto al nombre de una variable miembro, escrita con *Camel Casing*
+ - En caso de ser necesarias, utiliza un `_` antepuesto al nombre de una variable miembro, escrita con *camel casing*.
 `private int _clientId`  
 `private string _name;`  
- - Para el caso de variables tipo booleanas, además del usa un prefijo como "can"(puede), "is"(es) o "has"(tiene)  
+
+ - Para el caso de variables tipo booleanas, además del usa un prefijo como "can"(puede), "is"(es) o "has"(tiene).  
  `public bool IsCool { get; set; }`  
  `private bool _hasChildren;`  
  
- - No uses nombres de variables que se puedan parecer a palabras reservadas de C#
+ - No uses nombres de variables que se puedan parecer a palabras reservadas de C# (o de cualquier otro lenguaje).
 
- - Usa nombres completos siempre que sea posible, es deir, evita abreviaturas. Si se está trabajando con siglas o acrónimos debes mantener todos sus caractéres en mayúsculas  
+ - Usa nombres completos siempre que sea posible, es deir, evita abreviaturas. Si se está trabajando con siglas o acrónimos debes mantener todos sus caractéres en mayúsculas.  
 `string addr; // incorrecto`  
 `string address; // correcto`  
 `void PublishHTML() { ... // correcto`  
 `void PublishHypertextTrans... // incorrecto`  
 
- - Usa nombres de variables de una sola letra solo en casod e bucles, siempre y cuando no se usa más que para contador de iteraciones
+ - Usa nombres de variables de una sola letra solo en casod e bucles, siempre y cuando no se usa más que para contador de iteraciones.
 `for(int i = 0; i < value; i++) {`  
 
- - Usa *Pascal Casing* para nombrar clases y métodos
+ - Usa *pascal casing* para nombrar clases,  métodos y estructuras.
  `class SharpGuide { ...`  
  `void FixMatrix(int matrixId) { ...`  
 
- - Usa *Camel Casing* para los nombres de variables y parámetros de método
+ - Usa *camel casing* para los nombres de variables y parámetros de método.
  `string awesomeProgrammingLanguage = "C#";`  
  `void SetLanguage(string someLanguage) { ...`  
 
- - Para las interfaces antepón una `I` al nombre que debe estar escrito usando *Camel Casing*  
+ - Para las interfaces antepón una `I` al nombre que debe estar escrito usando *camel casing*  
  `interface IStyleGuide { ...`  
  
  - En cuanto a los espacios del nombre, la convención es bastante clara, utiliza un formato como este `<company name>.<product name>.<top module>.<bottom module>`
@@ -61,32 +62,34 @@ Increíblemente, escoger buenos nombres para tus variables de programa, métodos
 ### ¿Comentarios? ¿en serio?
 Hay algunas organizaciones que requieren que comentes tu código o puede que aún después de escribir una poesía con tu código (y los nombres de variables y métodos) tu programa no sea tan entendible debido a alguna lógica necesaria del negocio o algún truco para eficientar la ejecución, ese es el momento de usar los comentarios.
 
- - No narres tu código a través de los comentarios, o en otras palabras no escribas un comentario por cada línea de código que escribas  
+ - No narres tu código a través de los comentarios, o en otras palabras no escribas un comentario por cada línea de código que escribas.  
 
  - Escribe los comentarios en líneas que no contengan código y siempre antes de la sección a la que te quieres referir. Una excepción son las declaraciones o inicializaciones de variables.
- - Usa `//` o `///` para escribir comentarios. Evita `/* ... */` (y evita escribir comentarios de más de una línea)  
+
+ - Usa `//` o `///` para escribir comentarios. Evita `/* ... */` (y evita escribir comentarios de más de una línea).  
  
- - Tus comentarios son hermosos sin necesidad de que les hagas una cajita de `********` al rededor, así que también evita hacerlo
+ - Tus comentarios son hermosos sin necesidad de que les hagas una cajita de `********` al rededor, así que también evita hacerlo.
 
  - Revisa la ortografía de tus comentarios y asegurate de que sean claros al momento de leerlos.
- - Hay un comentario muy especial que debes usar cada vez que dejes código sin finalizar, ese es el comentario `// TODO: [descripción]` ya que el entorno de desarrollo identificará ese comentario como una funcionalidad pendiente de acabar y esta aparecerá en la lista de tareas pendientes
+
+ - Hay un comentario muy especial que debes usar cada vez que dejes código sin finalizar, ese es el comentario `// TODO: [descripción]` ya que el entorno de desarrollo identificará ese comentario como una funcionalidad pendiente de acabar y esta aparecerá en la lista de tareas pendientes.
 
  - Recuerda que C# permite crear documentación en XML, para lo cual es necesario que esté bien formado.
 
 ### Estructura de un archivo y una clase
 También hay recomendaciones con respecto a los archivos, su estructura y su contenido.
 
- - Procura que un archivo contenga una sola clase, habrá casos en los que tal vez no se pueda, pero en general es posible
+ - Procura que un archivo contenga una sola clase, habrá casos en los que tal vez no se pueda, pero en general es posible.
 
- - El archivo de una clase debe llamarse igual que la clase que contiene
+ - El archivo de una clase debe llamarse igual que la clase que contiene.
 
  - Usa `tab` con tamaño de 4 para indentar el código en lugar de espacios
 
- - // TODO: Decidir acerca de los corchetes de apertura en la misma línea que una sentencia de código o firma de método
+ - Siempre escribe los corchetes `{ }` en líneas nuevas.
 
- - Agrupa líneas de código de acuerdo a la labor que realizan, separa dichos grupos por una línea en blanco
+ - Agrupa líneas de código de acuerdo a la labor que realizan, separa dichos grupos por una línea en blanco.
 
- - Separa por una sola línea los métodos definidos en una clase
+ - Separa por una sola línea los métodos definidos en una clase.
 
  - La estructura general de un archivo es:
 	 - Sentencias *using*
@@ -99,7 +102,7 @@ También hay recomendaciones con respecto a los archivos, su estructura y su con
 	 - Propiedades públicas
 	 - Métodos publicos  
 
- - La usa las directivas `#region` y `#endregion` para agrupar todas las categorías  enteriores y sea fácil navegar entre ellas
+ - La usa las directivas `#region` y `#endregion` para agrupar todas las categorías  anteriores y sea fácil navegar entre ellas.
 
 ### Algunas buenas prácticas
 
