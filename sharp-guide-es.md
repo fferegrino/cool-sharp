@@ -28,7 +28,7 @@ Increíblemente, escoger buenos nombres para tus variables de programa, métodos
  - En caso de variables de método, a menos que se requiera otra lógica, procura siempre usar las propiedades autoimplementadas.  
  `int Property { get; set; }`  
  
- - En caso de ser necesarias, utiliza un `_` antepuesto al nombre de una variable miembro, escrita con *camel casing*.
+ - En caso de ser necesarias, utiliza un `_` antepuesto al nombre de una variable miembro, escrita con *camel casing*.  
 `private int _clientId`  
 `private string _name;`  
 
@@ -58,7 +58,7 @@ Increíblemente, escoger buenos nombres para tus variables de programa, métodos
  - Para las interfaces antepón una `I` al nombre que debe estar escrito usando *camel casing*  
  `interface IStyleGuide { ...`  
  
- - En cuanto a los espacios del nombre, la convención es bastante clara, utiliza un formato como este `<company name>.<product name>.<top module>.<bottom module>`
+ - En cuanto a los espacios del nombre, la convención es bastante clara, utiliza un formato como este  `<company name>.<product name>.<top module>.<bottom module>`
 
  - Los archivos deben llamarse como la clase o interfaz pública que contienen.
  
@@ -78,7 +78,7 @@ Hay algunas organizaciones que requieren que comentes tu código o puede que aú
 
  - Hay un comentario muy especial que debes usar cada vez que dejes código sin finalizar, ese es el comentario `// TODO: [descripción]` ya que el entorno de desarrollo, si usas Visual Studio, identificará ese comentario como una funcionalidad pendiente de acabar y esta aparecerá en la lista de tareas pendientes.  
 
- - En caso de que un método o clase no sea autodocumentable o necesites proveer de infromación específica para su uso emplea los comentarios XML con  `///` para que, en caso de que el IDE lo permita, esta documentación se muestre cuando alguien más (o tu mismo) haga uso del elemento documentado.  
+ - En caso de que un método o clase no sea autodocumentable o necesites proveer de infromación específica para su uso, emplea los comentarios XML con  `///` para que, en caso de que el IDE lo permita, esta documentación se muestre cuando alguien más (o tu mismo) haga uso del elemento documentado.  
 
  - Recuerda que C# permite crear documentación en XML, para lo cual es necesario que esté bien formado.
 
@@ -126,7 +126,7 @@ También hay recomendaciones con respecto a los archivos, su estructura y su con
 
  - Si un método recibe más de 5 o 6 parámetros considera reemplazarlos por una estructura o una clase.
 
- - **NUNCA, nunca** *hardcodees*[^1] números, cadenas o cualquier otro valor. Usa fuentes extrarnas de datos (archivos, baess de datos, línea de comandos...).
+ - **NUNCA, nunca** *hardcodees*[^1] números, cadenas o cualquier otro valor. Usa fuentes externas de datos (archivos, baess de datos, línea de comandos...).
 
  - Utiliza `String.Empty` en lugar de las comillas vacías `""`.
 
