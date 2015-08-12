@@ -1,4 +1,4 @@
-Guía de estilo para C#
+Otra guía de estilo para C#
 ==================
 
 ## ¿Por qué?
@@ -21,6 +21,8 @@ A diferencia de lo que podría parecer, esta guía (y todas las demás que te en
 ### Te voy a cambiar el nombre...
 Increíblemente, escoger buenos nombres para tus variables de programa, métodos y clases puede ser la diferencia entre querer revisar un código viejo o rehacer todo de nuevo. Tal vez no quieras buscar para qué usas esa variable `c` dentro del método `compraalgo` y prefieras reescribir todo. No sé, piénsalo.
 
+#### Recomendaciones sobre los nombres
+
  - Usa nombres comprensibles que se autodocumenten para clases, métodos, variables, etc.
 
  - En caso de variables de método, a menos que se requiera otra lógica, procura siempre usar las propiedades autoimplementadas.  
@@ -42,7 +44,7 @@ Increíblemente, escoger buenos nombres para tus variables de programa, métodos
 `void PublishHTML() { ... // correcto`  
 `void PublishHypertextTrans... // incorrecto`  
 
- - Usa nombres de variables de una sola letra solo en casod e bucles, siempre y cuando no se usa más que para contador de iteraciones.
+ - Usa nombres de variables de una sola letra solo en caso de bucles, siempre y cuando no se usa más que para contador de iteraciones.
 `for(int i = 0; i < value; i++) {`  
 
  - Usa *pascal casing* para nombrar clases,  métodos y estructuras.
@@ -57,22 +59,26 @@ Increíblemente, escoger buenos nombres para tus variables de programa, métodos
  `interface IStyleGuide { ...`  
  
  - En cuanto a los espacios del nombre, la convención es bastante clara, utiliza un formato como este `<company name>.<product name>.<top module>.<bottom module>`
- - Los archivos deben llamarse como la clase pública que contienen.
+
+ - Los archivos deben llamarse como la clase o interfaz pública que contienen.
  
 ### ¿Comentarios? ¿en serio?
 Hay algunas organizaciones que requieren que comentes tu código o puede que aún después de escribir una poesía con tu código (y los nombres de variables y métodos) tu programa no sea tan entendible debido a alguna lógica necesaria del negocio o algún truco para eficientar la ejecución, ese es el momento de usar los comentarios.
 
- - No narres tu código a través de los comentarios, o en otras palabras no escribas un comentario por cada línea de código que escribas.  
+ - No narres tu código a través de los comentarios, o en otras palabras, no escribas un comentario por cada línea de código que escribas.  
 
  - Escribe los comentarios en líneas que no contengan código y siempre antes de la sección a la que te quieres referir. Una excepción son las declaraciones o inicializaciones de variables.
 
  - Usa `//` o `///` para escribir comentarios. Evita `/* ... */` (y evita escribir comentarios de más de una línea).  
  
+ 
  - Tus comentarios son hermosos sin necesidad de que les hagas una cajita de `********` al rededor, así que también evita hacerlo.
 
  - Revisa la ortografía de tus comentarios y asegurate de que sean claros al momento de leerlos.
 
- - Hay un comentario muy especial que debes usar cada vez que dejes código sin finalizar, ese es el comentario `// TODO: [descripción]` ya que el entorno de desarrollo identificará ese comentario como una funcionalidad pendiente de acabar y esta aparecerá en la lista de tareas pendientes.
+ - Hay un comentario muy especial que debes usar cada vez que dejes código sin finalizar, ese es el comentario `// TODO: [descripción]` ya que el entorno de desarrollo, si usas Visual Studio, identificará ese comentario como una funcionalidad pendiente de acabar y esta aparecerá en la lista de tareas pendientes.  
+
+ - En caso de que un método o clase no sea autodocumentable o necesites proveer de infromación específica para su uso emplea los comentarios XML con  `///` para que, en caso de que el IDE lo permita, esta documentación se muestre cuando alguien más (o tu mismo) haga uso del elemento documentado.  
 
  - Recuerda que C# permite crear documentación en XML, para lo cual es necesario que esté bien formado.
 
@@ -126,6 +132,11 @@ También hay recomendaciones con respecto a los archivos, su estructura y su con
 
  - Cuando sea necesario comprobar si una cadena está vacía utiliza los métodos del framework: `String.IsNullOrEmpty` o `String.IsNullOrWhiteSpace`.
 
- - Procura sobreescribir el método `Equals` en las clases definidas por el usuario.
+ - Procura sobreescribir el método `Equals` en las clases definidas por el usuario.  
 
-[^1]: Mala práctica del en el desarrollo de software que consiste en incrustar datos directamente en el código fuente de un programa
+## Contribuciones
+Soy solo un ser humano que gusta de programar, especialmente en C#, así que como bien dije, este no es un libro de reglas, solo algunas cuantas cosas que yo considero buenas prácticas. Si quieres hacer algún comentario, queja o sugerencia con respecto a esta guía, puedes hacerlo en [https://github.com/fferegrino/cool-sharp/issues](https://github.com/fferegrino/cool-sharp/issues), o antonio.feregrino@hotmail.es
+
+[^1]: Mala práctica del en el desarrollo de software que consiste en incrustar datos relacionados con la lógica de la aplicación directamente en el código fuente de un programa.
+
+
