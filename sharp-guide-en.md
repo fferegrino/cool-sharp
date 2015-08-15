@@ -1,4 +1,4 @@
-Yet another style guid for C#
+Yet another style guide for C#
 ==================
 
 ## Why?
@@ -38,105 +38,103 @@ Incredibly, choosing the right names for your variables, methods and classes cou
  
  - Avoid using variable names that look like C# (or any other language) reserved keywords.
 
- - Usa nombres completos siempre que sea posible, es deir, evita abreviaturas. Si se está trabajando con siglas o acrónimos debes mantener todos sus caractéres en mayúsculas.  
-`string addr; // incorrecto`  
-`string address; // correcto`  
-`void PublishHTML() { ... // correcto`  
-`void PublishHypertextTrans... // incorrecto`  
+ - Use full names when possible, avoid abbreviations. If you are working with acronyms keep only the first character in uppercase.   
+`string addr; // wrong`  
+`string address; // right`  
+`void PublishHtml() { ... // right`  
+`void PublishHypertextTrans... // wrong`  
 
- - Usa nombres de variables de una sola letra solo en caso de bucles, siempre y cuando no se usa más que para contador de iteraciones.
+ - Use a single letter variable name only for cycles where it is used only to count iterations.
 `for(int i = 0; i < value; i++) {`  
 
- - Usa *pascal casing* para nombrar clases,  métodos y estructuras.
+ - Use *pascal casing* to name classes, methods and scructs.  
  `class SharpGuide { ...`  
  `void FixMatrix(int matrixId) { ...`  
 
- - Usa *camel casing* para los nombres de variables y parámetros de método.
+ - Use *camel casing* to name variables and method parameters.
  `string awesomeProgrammingLanguage = "C#";`  
  `void SetLanguage(string someLanguage) { ...`  
 
- - Para las interfaces antepón una `I` al nombre que debe estar escrito usando *camel casing*  
+ - For interfaces, prefix an `I` to the name in *camel casing*.   
  `interface IStyleGuide { ...`  
  
- - En cuanto a los espacios del nombre, la convención es bastante clara, utiliza un formato como este  `<company name>.<product name>.<top module>.<bottom module>`
+ - For `namespaces` follow the next convention `<company name>.<product name>.<top module>.<bottom module>`
 
- - Los archivos deben llamarse como la clase o interfaz pública que contienen.
+ - Al files must be named after the class or interface they contain.
  
-### ¿Comentarios? ¿en serio?
-Hay algunas organizaciones que requieren que comentes tu código o puede que aún después de escribir una poesía con tu código (y los nombres de variables y métodos) tu programa no sea tan entendible debido a alguna lógica necesaria del negocio o algún truco para eficientar la ejecución, ese es el momento de usar los comentarios.
+### Comments? really?
+Maybe you just finished writing a poetry with code (including variables and method names) and your code isn’t as understandable as it should be due some crazy business logic or an efficiency trick you applied, that is when a good comment helps other developers. Or, maybe the company you’re wants you to document every single method you created. Here are some recommendations for comments:
 
- - No narres tu código a través de los comentarios, o en otras palabras, no escribas un comentario por cada línea de código que escribas.  
+ - Do not narrate your code through the comments or, in other words, don’t write a comment for eery line of code.  
 
- - Escribe los comentarios en líneas que no contengan código y siempre antes de la sección a la que te quieres referir. Una excepción son las declaraciones o inicializaciones de variables.
+ - Write comments on empty lines and above the section the comment refers to. As an exception, write a comment on the same line of a variable declaration if needed.
 
- - Usa `//` o `///` para escribir comentarios. Evita `/* ... */` (y evita escribir comentarios de más de una línea).  
+ - Use `//` or `///` to write comments, avoid `/* ... */` (and avoid writing comments of more than one line).  
  
  
- - Tus comentarios son hermosos sin necesidad de que les hagas una cajita de `********` al rededor, así que también evita hacerlo.
+ - Your comments are beautiful as they are, there is no need to put a  fancy `********` around them, so avoid this as well.
 
- - Revisa la ortografía de tus comentarios y asegurate de que sean claros al momento de leerlos.
+ - Check your comments spelling and make sure they make sense when read.
 
- - Hay un comentario muy especial que debes usar cada vez que dejes código sin finalizar, ese es el comentario `// TODO: [descripción]` ya que el entorno de desarrollo, si usas Visual Studio, identificará ese comentario como una funcionalidad pendiente de acabar y esta aparecerá en la lista de tareas pendientes.  
+ - There is this cool special comment that you must use when you leave unfinished code, and that is `// TODO: [description]` some IDEs would identify them an put them in a task list so you can easily come back and finish the work.  
 
- - En caso de que un método o clase no sea autodocumentable o necesites proveer de infromación específica para su uso, emplea los comentarios XML con  `///` para que, en caso de que el IDE lo permita, esta documentación se muestre cuando alguien más (o tu mismo) haga uso del elemento documentado.  
+ - In case a method or a class isn’t as self documented as you want, use XML comments `///`, some IDEs will grab those comments and show them when a developer makes a reference to the documented method or class. 
 
- - Recuerda que C# permite crear documentación en XML, para lo cual es necesario que esté bien formado.
+ - Remember that C# allows to write XML documentation, make sure it is well formed.
 
-### Estructura de un archivo y una clase
-También hay recomendaciones con respecto a los archivos, su estructura y su contenido.
+### File and class structure
+There are some recommendation about files, it structure and content.
 
- - Procura que un archivo contenga una sola clase, habrá casos en los que tal vez no se pueda, pero en general es posible.
+ - Try to write a class (or interface) per file, there might be some cases when that couldn’t be possible, generally it is.
 
- - El archivo de una clase debe llamarse igual que la clase que contiene.
+ - The file name must be the same as the class or interface it contains.
 
- - Usa `tab` con tamaño de 4 para indentar el código en lugar de espacios
+ - Use `tab` of size 4 to indent the code instead of spaces.
 
- - Siempre escribe los corchetes `{ }` en líneas nuevas.
+ - Always write curly brackets `{ }` on empty lines.
 
- - Agrupa líneas de código de acuerdo a la labor que realizan, separa dichos grupos por una línea en blanco.
+ - Group lines of code for what they do, leave an empty line between groups of code.
 
- - Separa por una sola línea los métodos definidos en una clase.
+ - Leave an empty line between every method declaration.
 
  - La estructura general de un archivo es:
-	 - Sentencias *using*
+	 - *using* sentences
 	 - *namespace*
-	 - Declaración de la clase
-	 -  Variables privadas
-	 - Propiedades privadas
-	 - Métodos privados
-	 - Constructores
-	 - Propiedades públicas
-	 - Métodos publicos  
+	 - Class declaration
+   - Private variables
+	 - Private properties
+	 - Public properties
+	 - Constructors
+	 - Public methods  
+	 - Private methods
 
- - La usa las directivas `#region` y `#endregion` para agrupar todas las categorías  anteriores y sea fácil navegar entre ellas.
+ - Use the `#region` and `#endregion` directives to group the mentioned categories and make it easy to identify them.
 
-### Algunas buenas prácticas
+### Other good practices
 
- - Evita los métodos muy largos, procura conservar de 1 ~ 30 líneas de código. Si se pasa tal vez sea necesario revisarlo para ver si se puede separar en dos o varios métodos.
+ - Avoid writing a lot of lines per method, keep them around 30 lines maximum, if your method goes beyond that mark, stop and see if it could be broken down into two or more small pieces.
 
- - Nuevamente, **autodocumenta** tus métodos, si el nombre es claro no hay necesidad de explicar demasiado mediante los comentarios.
+ - Once again, **self document** your methods, if the name is clear enough there is no need to explain a lot using the comments.
 
- - No mezcles varias tareas en un solo método. Un solo método debe hacer una sola acción.
+ - Do not mix task in the same method. One action for each method.
 
- - Prefiere el uso de los alias de tipos de dato conocidos para declarar variables. Es decir, prefiere `string awesome = "awesome!";` a `String awesome = "awesome!"`.
+ - Use the data types alias to declare variables and method parameters, choose `string awesome = "awesome!";` over `String awesome = "awesome!"`.
 
- - Por el contrario, utiliza los tipos definidos en el `namespace System` para hacer referencia a constantes o métodos de clase: `int t = Int32.ParseInt("0");` mucho mejor que `int t = int.ParseInt("0");`.
+ - On the other hand, use the data types defined in `System` to make reference to constants or class methods, choose `Int32.ParseInt("0");` over `int.ParseInt("0");`.
 
- - No todo dentro de una clase tiene que ser público o privado, usa el modificador de acceso `internal` para propiedades y métodos si solo se accede a ellos dentro del mismo ensamblado.
+ - Not everything inside a class must be either private or public, use the `internal` access modifier for classes, methods or properties that must be accesible only within the same assembly.
 
- - Si un método recibe más de 5 o 6 parámetros considera reemplazarlos por una estructura o una clase.
+ - If a method receives more than 5 or 6 parameter, consider to renace them by an struct or a class that contains those parameters as properties.
 
- - **NUNCA, nunca** *hardcodees*[^1] números, cadenas o cualquier otro valor. Usa fuentes externas de datos (archivos, baess de datos, línea de comandos...).
+ - **NEVER, never** *hardcode*[^1] numbers, strings or any other value. Use external data sources like files, databases or even the command line.
 
- - Utiliza `String.Empty` en lugar de las comillas vacías `""`.
+ - Use `String.Empty` instead of an empty double quoted string `””`.
 
- - Cuando sea necesario comprobar si una cadena está vacía utiliza los métodos del framework: `String.IsNullOrEmpty` o `String.IsNullOrWhiteSpace`.
+ - To check if a string is empty use the class methods `String.IsNullOrEmpty` or `String.IsNullOrWhiteSpace`.
 
- - Procura sobreescribir el método `Equals` en las clases definidas por el usuario.  
+ - Always try to override the `Equals` method for user defined classes.
 
-## Contribuciones
-Soy solo un ser humano que gusta de programar, especialmente en C#, así que como bien dije, este no es un libro de reglas, solo algunas cuantas cosas que yo considero buenas prácticas. Si quieres hacer algún comentario, queja o sugerencia con respecto a esta guía, puedes hacerlo en [https://github.com/fferegrino/cool-sharp/issues](https://github.com/fferegrino/cool-sharp/issues), o antonio.feregrino@hotmail.es
+## Contributing
+I’m just a human being who likes to code, specially using C#, so as I said: this is not a rulebook but a few things that I consider as good practices. If you want to make a comment, complain or suggestion about this guide you can do it at [https://github.com/fferegrino/cool-sharp/issues](https://github.com/fferegrino/cool-sharp/issues), or antonio.feregrino@hotmail.es.
 
-[^1]: Mala práctica del en el desarrollo de software que consiste en incrustar datos relacionados con la lógica de la aplicación directamente en el código fuente de un programa.
-
-
+[^1]: Awful development practice that consists of placing business logic data directly in the source code of an application.

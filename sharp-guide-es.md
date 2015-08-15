@@ -25,7 +25,7 @@ Increíblemente, escoger buenos nombres para tus variables de programa, métodos
 
  - Usa nombres comprensibles que se autodocumenten para clases, métodos, variables, etc.
 
- - En caso de variables de método, a menos que se requiera otra lógica, procura siempre usar las propiedades autoimplementadas.  
+ - En caso de propiedades de clase, a menos que se requiera otra lógica, procura siempre usar las propiedades autoimplementadas.  
  `int Property { get; set; }`  
  
  - En caso de ser necesarias, utiliza un `_` antepuesto al nombre de una variable miembro, escrita con *camel casing*.  
@@ -38,13 +38,13 @@ Increíblemente, escoger buenos nombres para tus variables de programa, métodos
  
  - No uses nombres de variables que se puedan parecer a palabras reservadas de C# (o de cualquier otro lenguaje).
 
- - Usa nombres completos siempre que sea posible, es deir, evita abreviaturas. Si se está trabajando con siglas o acrónimos debes mantener todos sus caractéres en mayúsculas.  
+ - Usa nombres completos siempre que sea posible, es decir, evita abreviaturas. Si se está trabajando con siglas o acrónimos debes mantener todos sus caracteres en mayúsculas.  
 `string addr; // incorrecto`  
 `string address; // correcto`  
-`void PublishHTML() { ... // correcto`  
+`void PublishHtml() { ... // correcto`  
 `void PublishHypertextTrans... // incorrecto`  
 
- - Usa nombres de variables de una sola letra solo en caso de bucles, siempre y cuando no se usa más que para contador de iteraciones.
+ - Usa nombres de variables de una sola letra solo en caso de bucles, siempre y cuando no se use más que para contador de iteraciones.
 `for(int i = 0; i < value; i++) {`  
 
  - Usa *pascal casing* para nombrar clases,  métodos y estructuras.
@@ -63,7 +63,7 @@ Increíblemente, escoger buenos nombres para tus variables de programa, métodos
  - Los archivos deben llamarse como la clase o interfaz pública que contienen.
  
 ### ¿Comentarios? ¿en serio?
-Hay algunas organizaciones que requieren que comentes tu código o puede que aún después de escribir una poesía con tu código (y los nombres de variables y métodos) tu programa no sea tan entendible debido a alguna lógica necesaria del negocio o algún truco para eficientar la ejecución, ese es el momento de usar los comentarios.
+Tal vez acabas de escribir una poesía con tu código (y los nombres de variables y métodos) pero aun así tu programa no sea tan entendible debido a alguna lógica loca del negocio o algún truco para eficientar la ejecución, ese es el momento de usar los comentarios. O tal vez la compañía en la que trabajas requiere que documentes todos los métodos que creaste. He aquí algunas recomendaciones para los comentarios:
 
  - No narres tu código a través de los comentarios, o en otras palabras, no escribas un comentario por cada línea de código que escribas.  
 
@@ -74,7 +74,7 @@ Hay algunas organizaciones que requieren que comentes tu código o puede que aú
  
  - Tus comentarios son hermosos sin necesidad de que les hagas una cajita de `********` al rededor, así que también evita hacerlo.
 
- - Revisa la ortografía de tus comentarios y asegurate de que sean claros al momento de leerlos.
+ - Revisa la ortografía de tus comentarios y asegúrate de que sean claros al momento de leerlos.
 
  - Hay un comentario muy especial que debes usar cada vez que dejes código sin finalizar, ese es el comentario `// TODO: [descripción]` ya que el entorno de desarrollo, si usas Visual Studio, identificará ese comentario como una funcionalidad pendiente de acabar y esta aparecerá en la lista de tareas pendientes.  
 
@@ -101,12 +101,12 @@ También hay recomendaciones con respecto a los archivos, su estructura y su con
 	 - Sentencias *using*
 	 - *namespace*
 	 - Declaración de la clase
-	 -  Variables privadas
+	 - Variables privadas
 	 - Propiedades privadas
-	 - Métodos privados
-	 - Constructores
 	 - Propiedades públicas
-	 - Métodos publicos  
+	 - Constructores
+	 - Métodos públicos  
+	 - Métodos privados
 
  - La usa las directivas `#region` y `#endregion` para agrupar todas las categorías  anteriores y sea fácil navegar entre ellas.
 
@@ -120,11 +120,11 @@ También hay recomendaciones con respecto a los archivos, su estructura y su con
 
  - Prefiere el uso de los alias de tipos de dato conocidos para declarar variables. Es decir, prefiere `string awesome = "awesome!";` a `String awesome = "awesome!"`.
 
- - Por el contrario, utiliza los tipos definidos en el `namespace System` para hacer referencia a constantes o métodos de clase: `int t = Int32.ParseInt("0");` mucho mejor que `int t = int.ParseInt("0");`.
+ - Por el contrario, utiliza los tipos definidos en `System` para hacer referencia a constantes o métodos de clase: `Int32.ParseInt("0");` mucho mejor que `int.ParseInt("0");`.
 
  - No todo dentro de una clase tiene que ser público o privado, usa el modificador de acceso `internal` para propiedades y métodos si solo se accede a ellos dentro del mismo ensamblado.
 
- - Si un método recibe más de 5 o 6 parámetros considera reemplazarlos por una estructura o una clase.
+ - Si un método recibe más de 5 o 6 parámetros considera reemplazarlos por una estructura o una clase que contenga esos parámetros como propiedades.
 
  - **NUNCA, nunca** *hardcodees*[^1] números, cadenas o cualquier otro valor. Usa fuentes externas de datos (archivos, baess de datos, línea de comandos...).
 
