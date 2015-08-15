@@ -1,45 +1,42 @@
-Hey loco, traduce esto
+Yet another style guid for C#
 ==================
 
-Otra guía de estilo para C#
-==================
+## Why?
+I'm sure you are wondering why do you need a style guide if you already know how to program. True that, but let me tell you something (and I don't mean to be rude): **Anyone can write code**. Anyone with some months of experience, maybe a lecture or even an internet video can write a functional app in little time. Writing code that works is easy, writing good code that works is way harder.
 
-## ¿Por qué?
-Seguramente te estarás preguntando para qué necesitas una guía de estilo si tu ya sabes programar. Cierto, pero déjame decirte algo esperando no sonar ofensivo: **Cualquiera puede programar**. Cualquiera con unos cuantos meses de experiencia, alguno que otro curso o vídeo en internet puede escribir una aplicación funcional en poco tiempo. Hacer código que funcione es sencillo, hacer un buen código que funcione es lo complicado.
+### The Good Code
+About The Good Code, everyone seems to have a distinct opinion, yet there are some points where those opinions come together, based on those I dare to say that The Good Code is:
 
-### El Buen Código
-Respecto al buen código, todos pueden tener una opinión distinta, sin embargo hay puntos en los que coincide cualquier definición de El Buen Código, basándonos en eso me atrevo a decir decir que es:
-
- - Eficiente
- - Mantenible
- - Organizado
+ - Efficient
+ - Maintainable
+ - Well organized
  - Legible
 
-Escribir El Buen Código es un arte que tu debes aprender, practicar y fomentar. Adoptar un estilo (o crear uno propio) te puede ayudar a conseguirlo.
+Writing The Good Code is an art that you must learn, practice and encourage. To adopt an style (or create your own) could help you to achieve that.
 
-### Sobre las guías de estilo
-A diferencia de lo que podría parecer, esta guía (y todas las demás que te encuentres) no son mandamientos que debes seguir estrictamente, porque tal vez haya aspectos que no se puedan integrar a tu organización por cuestiones filosóficas de la empresa, compatibilidad con sistemas antiguos o complicados errores en la Matrix. Así que toma estas guías como sugerencias que si son adoptadas por tu organización te ayudarán a mantener un código estandarizado, que sea fácilmente legible por todos miembros del equipo de desarrollo y, en caso de ser requerido, sea mantenible.
+### About style guides
+Contrary to what it might seem, this guide (and any other you may happen to find) isn't a rulebook that you must follow strictly, there may be things that simply you cant integrate into your organization due philosophical reasons, compatibility with legacy systems or complicated errors in The Matrix. So, take this kind of guides as suggestions that, if applied to your organization, might help to keep an standardized code, easily legible and maintainable for everyone in your dev team.
 
-## La guía
-### Te voy a cambiar el nombre...
-Increíblemente, escoger buenos nombres para tus variables de programa, métodos y clases puede ser la diferencia entre querer revisar un código viejo o rehacer todo de nuevo. Tal vez no quieras buscar para qué usas esa variable `c` dentro del método `compraalgo` y prefieras escribir el método `compraalgo2`. No sé, piénsalo.
+## The Guide
+### My name is Asdflkj, James Asdflkj
+Incredibly, choosing the right names for your variables, methods and classes could make the difference between wanting to use an old code or write the same code from scratch. You may not want to find out for what you were using that `c` variable inside the `buysomething` method and prefer to write the `muysomething2` method instead. Think about it.
 
-#### Recomendaciones sobre los nombres
+#### Recommendations about naming
 
- - Usa nombres comprensibles que se autodocumenten para clases, métodos, variables, etc.
+ - Use comprehensible names for classes, methods, variables, etc. 
 
- - En caso de variables de método, a menos que se requiera otra lógica, procura siempre usar las propiedades autoimplementadas.  
+ - In case of class properties, unless another logic is needed, always use Auto-Implemented properties.  
  `int Property { get; set; }`  
  
- - En caso de ser necesarias, utiliza un `_` antepuesto al nombre de una variable miembro, escrita con *camel casing*.  
+ - Use an `_` before a member variable, then write the name using *camel casing*.  
 `private int _clientId`  
 `private string _name;`  
 
- - Para el caso de variables tipo booleanas, además del usa un prefijo como "can"(puede), "is"(es) o "has"(tiene).  
+ - When using boolean variables, use prefix words like "can", "is", or "has", depending on what they represent.  
  `public bool IsCool { get; set; }`  
  `private bool _hasChildren;`  
  
- - No uses nombres de variables que se puedan parecer a palabras reservadas de C# (o de cualquier otro lenguaje).
+ - Avoid using variable names that look like C# (or any other language) reserved keywords.
 
  - Usa nombres completos siempre que sea posible, es deir, evita abreviaturas. Si se está trabajando con siglas o acrónimos debes mantener todos sus caractéres en mayúsculas.  
 `string addr; // incorrecto`  
