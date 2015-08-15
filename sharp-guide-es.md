@@ -5,7 +5,7 @@ Otra guía de estilo para C#
 Seguramente te estarás preguntando para qué necesitas una guía de estilo si tu ya sabes programar. Cierto, pero déjame decirte algo esperando no sonar ofensivo: **Cualquiera puede programar**. Cualquiera con unos cuantos meses de experiencia, alguno que otro curso o vídeo en internet puede escribir una aplicación funcional en poco tiempo. Hacer código que funcione es sencillo, hacer un buen código que funcione es lo complicado.
 
 ### El Buen Código
-Respecto al buen código, todos pueden tener una opinión distinta sin hay puntos en los que coincide cualquier definición de El Buen Código, basándonos en eso podemos decir que es:
+Respecto al buen código, todos pueden tener una opinión distinta, sin embargo hay puntos en los que coincide cualquier definición de El Buen Código, basándonos en eso me atrevo a decir decir que es:
 
  - Eficiente
  - Mantenible
@@ -19,7 +19,7 @@ A diferencia de lo que podría parecer, esta guía (y todas las demás que te en
 
 ## La guía
 ### Te voy a cambiar el nombre...
-Increíblemente, escoger buenos nombres para tus variables de programa, métodos y clases puede ser la diferencia entre querer revisar un código viejo o rehacer todo de nuevo. Tal vez no quieras buscar para qué usas esa variable `c` dentro del método `compraalgo` y prefieras reescribir todo. No sé, piénsalo.
+Increíblemente, escoger buenos nombres para tus variables de programa, métodos y clases puede ser la diferencia entre querer revisar un código viejo o rehacer todo de nuevo. Tal vez no quieras buscar para qué usas esa variable `c` dentro del método `compraalgo` y prefieras escribir el método `compraalgo2`. No sé, piénsalo.
 
 #### Recomendaciones sobre los nombres
 
