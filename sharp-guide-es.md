@@ -130,7 +130,7 @@ También hay recomendaciones con respecto a los archivos, su estructura y su con
 
  - Utiliza `String.Empty` en lugar de las comillas vacías `""`, excepto cuando se tenga que declarar valores constantes (`String.Emtpy` no es constante).
 
- - Cuando sea necesario comprobar si una cadena está vacía utiliza los métodos del framework: `String.IsNullOrEmpty` o `String.IsNullOrWhiteSpace`.
+ - Cuando sea necesario comprobar si una cadena está vacía utiliza los métodos del framework: `String.IsNullOrEmpty` o `String.IsNullOrWhiteSpace`, (`String.IsNullOrWhiteSpace` solo está disponible en .NET 4+).
 
  - Procura sobreescribir el método `Equals` en las clases definidas por el usuario.  
 
